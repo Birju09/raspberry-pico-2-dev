@@ -1,7 +1,7 @@
 CROSS_COMPILE ?= arm-none-eabi-
 
 # SDK Directory
-REPO_DIR = external/pico-sdk
+REPO_DIR = ../external/pico-sdk
 BRANCH = master
 
 # Compiler and tools

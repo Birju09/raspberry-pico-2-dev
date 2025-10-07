@@ -1,0 +1,9 @@
+.vscode
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.d
+*.uf2
+.DS_Store

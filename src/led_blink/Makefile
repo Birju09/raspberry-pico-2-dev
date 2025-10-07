@@ -1,7 +1,8 @@
 CROSS_COMPILE ?= arm-none-eabi-
 
 # SDK Directory
-REPO_DIR = ../external/pico-sdk
+GIT_ROOT_DIR := $(shell git rev-parse --show-toplevel)
+REPO_DIR = $(GIT_ROOT_DIR)/external/pico-sdk
 BRANCH = master
 
 # Compiler and tools

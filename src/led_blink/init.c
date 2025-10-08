@@ -12,21 +12,12 @@ extern char __data[RAMSIZE], __edata[], __data_lma[RAMSIZE];
 
 int main();
 
-static void _config_ref_clock() {
-  CLOCKS->CLK_REF_CTRL = 0x2;                        // select XOSC as source
-  CLOCKS->CLK_REF_DIV = CLOCKS_CLK_REF_DIV_INT(12);  // divide-by-12 for 1MHz
-
-  while (
-      !(CLOCKS->CLK_REF_SELECTED & CLOCKS_CLK_REF_CTRL_SRC_VALUE_XOSC_CLKSRC))
-    continue;
-}
-
 void _crt0() {
-  // _config_ref_clock();
-  /*Copy DATA segment*/
+	
   char* to = __data;
   char* from = __data_lma;
   while (to < __edata) *to++ = *from++;
+
   /*Clear BSS segment*/
   to = __bss;
   while (to < __ebss) *to++ = 0;

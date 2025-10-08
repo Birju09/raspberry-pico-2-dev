@@ -11,9 +11,9 @@ __heap_size = 8K;
 SECTIONS
 {
 	.boot : {
-		KEEP(init.o(.vector_table))
-		KEEP(init.o(.start_block))
-		KEEP(init.o(.init))
+		KEEP(*(.vector_table))
+		KEEP(*(.start_block))
+		KEEP(*(.init))
 	} > FLASH
 
 	TEXT : {
